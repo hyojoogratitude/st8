@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>동영상연습</title>
+  <style>
+    span{
+      color: #f00;
+      font-weight:bolder;
+    }
+  </style>
+</head>
+<body>
+  <h1>동영상 연습</h1>
+  <div>
+    <aside>
+      <h2>인라인의 사용법</h2>
+      <p>Lorem ipsum dolor <span>sit amet consectetur</span>, adipisicing elit. <strong>Reprehenderit fugit repellat</strong>, consequatur quidem harum <span>dolores voluptatem dicta</span>, beatae voluptatibus corporis asperiores impedit! Unde cupiditate tenetur atque voluptas temporibus, cumque vitae.</p>
+    </aside>
+  </div>
+<!-- 동영상 태그 -->
+<!-- video-wrap -->
+<div class="video-wrap">
+  <video src="imgae-multimedia/media/halongbay_320.mp4" controls
+  autoplay
+  muted
+  loop
+  playsinline
+  ></video>
+  <video src="imgae-multimedia/media/halongbay_320.mp4" controls
+  muted
+  loop
+  poster="imgae-multimedia/media/halongbay_320_2_Moment.jpg"
+  playsinline
+  ></video>
+  <video  
+  controls
+  muted
+  loop
+  playsinline
+  poster="imgae-multimedia/media/halongbay_320_2_Moment.jpg"
+  ></video>
+  <source src="imgae-multimedia/media/halongbay_320.asf">
+  <source src="imgae-multimedia/media/halongbay_320.mp4">
+</div>
+</body>
+</html>
