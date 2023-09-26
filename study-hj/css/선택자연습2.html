@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자연습2</title>
+  <style>
+    body{
+      font-size: 14px; /*0.875em*/
+      color:#f00;
+      /* font-family: "나눔","궁서체"; */
+    }
+
+    .title{
+      font-weight: bold;
+      font-size: 24px;
+      color:purple;
+    }
+
+    .title a{
+      color: #000;
+      text-decoration: none; /*밑줄문자 안씀*/
+
+    }
+
+    .title a:hover{
+      color: purple;
+      text-decoration: underline;
+      background-color: rgba(0,0,255,0.5);
+      padding: 0.5rem 1rem;
+    }
+
+    .box{
+      color:#000;
+      font-size: 0.929em; /*13px*/
+      margin:2rem; /*rem:body의글자크기*2  em:부모의 글자크기*/
+      background-color: #ccc;
+      line-height: 1.4; /*글자크기의 1.4배*/
+    }
+
+    /* #section2의 .box요소 중 첫번째 자식 궁서체 */
+    #section2 .box:nth-child(2){
+      font-family: "궁서체";
+      color: #00f;
+    }
+
+    /* 카페24 글자색 바꾸기 */
+  #category .position .xans-record-:first-child a{
+  color:#f00;
+  font-weight:bold;
+}
+
+/* 마우스 갖다대면 색깔 바꾸기 */
+#category .position .xans-record-:nth-child(3) a:hover{
+  background-color: rgba(255,0,0,0.5);
+}
+
+#category .position .xans-record-:nth-child(3) a{
+  background-color: rgba(255,0,0,0.5);
+}
+
+
+  </style>
+</head>
+<body>
+ <!-- .wrap>header+.main+footer -->
+ <div class="wrap">
+  <header></header>
+  <div class="main">
+    <!-- #section$.container*2>.inner>.title+.desc>.box*2 -->
+        
+    <!-- #section$.container*2>.inner>(.title>{제목})+.desc>.box*2>lorem6     -->
+    <div id="section1" class="container">
+      <div class="inner">
+        <div class="title">제목</div>
+        <div class="desc">
+          <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus aspernatur explicabo non ipsa inventore pariatur, accusamus mollitia quam corrupti unde ea ab enim praesentium laborum voluptas, rerum, odio exercitationem nihil.
+          Explicabo, architecto. Cumque saepe harum adipisci recusandae, quod officia cupiditate asperiores. Deserunt tempora vel minus id ex omnis suscipit adipisci ullam molestiae et, laboriosam dolorum aliquid sunt veniam totam reiciendis? Lorem ipsum dolor sit amet consectetur.</div>
+          <div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae laboriosam veniam minima quidem facilis culpa error incidunt dicta laborum, enim obcaecati architecto. Nisi illo ea aliquam repellat! Magnam, cum! Perspiciatis.
+          Veritatis veniam natus corrupti possimus enim? Fugit modi dolor, autem in tempore perspiciatis sapiente ab, eveniet vitae nihil, fugiat architecto? Ipsam voluptatibus quas harum enim veritatis, rem perferendis voluptatum recusandae Omnis velit ipsa perspiciatis voluptatum fuga.</div>
+        </div>
+      </div>
+    </div>
+    <div id="section2" class="container">
+      <div class="inner">
+        <div class="title"><a href="">제목</a></div>
+        <div class="desc">
+          <div class="box">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
+          <div class="box">Lorem ipsum dolor sit amet consectetur.</div>
+          <div class="box">Vero ducimus quibusdam laborum dolorum similique.</div>
+        </div>
+      </div>
+    </div>
+  <footer></footer>
+ </div>
+</body>
+</html>
+

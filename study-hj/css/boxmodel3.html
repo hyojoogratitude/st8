@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>boxmodel3-boxmodel 계산법</title>
+  <style>
+    *{margin:0; padding:0;}
+    .box{
+      /* 마진은 크기로 치지 않음
+      auto(Lm) + 10(Lb) +50(Lp)+400(with)+50(Rp)+10(Rb)+auto(Rm)->520
+      */
+      width: 400px;
+      height: 300px;
+      padding: 50px;
+      border: 10px solid #f86;
+      margin:50px auto; 
+      /*블록레벨의 가운데정렬*/
+      background-color: #333;
+      color: #fff;
+    }
+
+    .box1{
+      box-sizing:content-box;
+      /* content-box 기본값 */
+    }
+
+    .box2{
+      box-sizing: border-box;
+      /*box-sizing은 박스모델 계산법을 지정  */
+      /* width/height 지정값이 
+      
+      박스모델 content영역지정 -> 기본값- content-box
+      
+      박스모델 border+padding+content -> border-box
+      */
+      /* width 선언된 값은 border+padding+content */
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- .box.box$*2>lorem*2 -->
+    <div class="box box1">
+      <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam fuga distinctio assumenda blanditiis eveniet totam fugiat architecto impedit? Doloribus quaerat quas reprehenderit obcaecati nisi quidem ad aperiam non qui ea.</div>
+      <div>Error dolores quisquam adipisci obcaecati laboriosam? Ipsam pariatur ex distinctio earum numquam quidem aspernatur voluptas temporibus, rem corporis quas iusto nulla quia eum. Rerum quaerat eos inventore possimus totam culpa.</div>
+    </div>
+    <div class="box box2">
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem dolores autem, incidunt quaerat harum aliquam necessitatibus non quasi excepturi? Nesciunt, numquam eum nobis sed itaque dolore officia aspernatur perspiciatis ipsa?</div>
+      <div>Magnam, incidunt aspernatur praesentium sapiente sunt perferendis minus perspiciatis earum amet sequi fugiat exercitationem rerum ea, enim voluptatem possimus quidem itaque similique excepturi dolores doloremque soluta! In soluta quidem quia.</div>
+    </div>
+  </div>
+</body>
+</html>

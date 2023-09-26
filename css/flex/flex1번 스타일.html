@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flexitem 가로 세로 가운데정렬-flex1번 스타일-1</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;} 
+    .wrap{    }
+    .parent{
+      background-color:rgba(0,0,255,0.5);
+      height: 400px;
+    }
+    .child{
+      background-color: #fff;
+      color:#000;
+      font-size: 2rem;
+    }
+
+    .child p{
+      flex-grow:0;
+      
+    }
+    .child:last-child{
+      font-size: 0.4em;
+    }
+
+    .container{
+      display: flex;
+      justify-content: center;
+      align-items:center;
+    }
+
+    .item{
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+  <h1>수직 수평 가운데정렬</h1>
+  <h2>
+    <p>주축정렬</p>
+    <p></p>
+    <p></p>
+  </h2>
+  <div class="wrap">
+    <div class="parent container">
+      <div class="child item">
+        <p>Lorem, ipsum dolor.</p>
+        <p>Lorem ipsum dolor sit amet.\</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A dolorum necessitatibus minima reprehenderit cumque rerum molestiae illum, minus porro possimus nesciunt? Temporibus iste quidem ducimus quisquam commodi eaque dolor voluptates.</p>
+      </div>
+    
+    </div>
+  </div>
+</body>
+</html>
