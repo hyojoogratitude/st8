@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>boxmode 2-박스계산법</title>
+  <!-- 외부의 css를 불러올때 -->
+  <link rel="stylesheet" href="asset/css/style1.css">
+  <!-- html 문서내에서 css 선언 -->
+  <style>
+   
+/* block 레벨 */
+
+/* 
+요소의 수평크기
+lm+lb+lp+content(width)+rp+rb+rm
+*/
+
+/* 요소의 수직크기
+tm+tp+tp+content(heigh)+bp+bb+bm
+*/
+*{padding: 0; margin: 0;}
+h1{background-color: #f68;}
+
+.box:nth-of-type(1) {margin: 50px;}
+
+/* 
+요소의 수평크기
+lm+lb+lp+content(width)+rp+rb+rm
+   lb1+lp50+width300+rp50+rb1
+   1+50+300+50+1
+
+*/
+
+.box:nth-of-type(2){
+  background-color: #ccc;
+  width: 300px;
+  padding: 30px 50px;
+  border: 1px solid #000;
+  /* margin:100px auto; */
+  /*margin :상하 auto; 블록레벨을 가운데 위치*/
+  text-align: center;
+}
+
+ul{
+  width:80%;
+  margin: 50px auto;
+  background-color: #ccc;
+  /* block 레벨의자식 중 인라인레벨과 텍스트을 정렬 */
+  text-align: center;
+}
+ul li{
+  background-color: #f68;
+  /* inline레벨은 크기적용 */
+  /* width: 100px; */
+  /* width: 25%; */
+  width: calc(25%-4px);
+  /* padding: 2rem; */
+  /*display 속성으로 block - inline 전환*/
+  /* inline-bloc 인라인 줄바꿈 없는 특징, 블록의 크기지정 특징 */
+  display: inline-block;  
+} 
+
+.test{
+  /* inline레벨은 수직여백은 정상적으로 적용되지 않음 */
+  /* inline레벨은 크기지정을 할 수 없어요
+     inline 레벨은 자신이 포함한 내용만큼의 크기를 유지 */
+  background-color: #6f8;
+  border: 1px solid #000;
+  /* padding: 50px;
+  margin: 50px; */
+  padding: 0 1rem;
+  margin: 0 2rem;
+  width: 300px;
+}
+  </style>
+</head>
+<!-- 태그에 인라인으로 css적용 -->
+<body>
+  <h1 class="page-title">웹폰트 사용</h1>
+  
+  <div class="box">Lorem <span class="test">ipsum dolor</span> sit <span class="test">amet, consectetur</span> adipisicing elit. Atque fugit assumenda ullam laudantium laboriosam autem explicabo beatae voluptas amet quidem nobis, molestiae non! Aut alias officia illum sit quam minus.</div>
+  <!-- .box>lorem -->
+  <div class="box">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis tempora necessitatibus ipsam temporibus molestias, quod iusto minima quas cumque vero illum ratione quaerat quos numquam quam mollitia laborum odio autem.</div>
+
+  <!-- ul>li*4>a>{text$} -->
+  <ul>
+    <li><a href="">text1</a></li>
+    <li><a href="">text2</a></li>
+    <li><a href="">text3</a></li>
+    <li><a href="">text4</a></li>
+  </ul>
+
+  <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae at deserunt suscipit iste quis odio deleniti enim ipsa, soluta exercitationem id adipisci corrupti dolor. Velit vitae explicabo cumque praesentium illum?</div>
+</body>
+
+</html>

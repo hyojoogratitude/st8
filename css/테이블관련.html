@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>테이블관련 css</title>
+<style>
+
+  *{margin:0; padding: 0;}
+  .container{margin: 50px;}
+  table.sample{
+    border-collapse: collapse;
+    table-layout: fixed;
+    box-sizing: border-box;
+    width: 100%;
+    border:1px solid #000;
+    border-top:10px solid #f86;
+    width:500px;
+  }
+   
+  .sample tr:nth-child(1) th{
+    background-color: #000;
+    color:#fff;
+    padding: 1rem;
+  }
+  .sample th:nth-child(1){
+    width:100px
+  }
+  .sample td{
+    border:1px solid #000;
+    box-sizing: border-box;
+  }
+
+  .sample th:nth-child(3){
+    width:150px;
+  }
+
+  .sample tr:nth-child(even) td{
+  background-color: #68f; 
+}
+
+ .sample tr:nth-child(odd) td{
+  background-color: #fff;
+ }
+
+.sample tr:hover td{
+
+  background-color: #68f;
+}
+
+</style>
+
+</head>
+<body>
+  <div class="container"></div>
+  <!-- table.sample>tr>th*3>{title$}^^tr>td*3>lorem2 -->
+  <table class="sample">
+    <!-- tr>th*3>{title$}^^tr>td*3>lorem2 -->
+    <tr>
+      <th>title1</th>
+      <th>title2</th>
+      <th>title3</th>
+    </tr>
+    <tr>
+      <td>Lorem, ipsum.</td>
+      <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil culpa error ipsam delectus ut, ad iure vero, ea laborum magni non maxime dolore aliquam modi, facilis quisquam earum dolores aspernatur?
+      Quisquam numquam, dolore cumque odio aperiam similique consequatur ex blanditiis necessitatibus doloremque consequuntur labore. Voluptates nesciunt perferendis doloribus excepturi. Unde quisquam laborum odit, inventore optio similique nisi voluptas reprehenderit placeat?</td>
+      <td>Ratione, nobis.</td>
+    </tr>
+
+
+
+  </table>
+  
+
+
+</body>
+</html>

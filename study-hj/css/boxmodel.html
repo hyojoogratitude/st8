@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>boxmodel</title>
+  <!-- 외부의 css를 불러올때 -->
+  <link rel="stylesheet" href="asset/css/style1.css">
+  <!-- html 문서내에서 css 선언 -->
+  <style>
+   .box{
+    /* border-color: #000;
+    border-style: solid;
+    border-width: 1px; */
+    border: #000 dotted 10px;  /*순서 상관없이 쓸 수 있음*/
+    border-top-color: #f00;
+    background-color: #ccc;
+
+    /* 안쪽 여백 padding 
+    padding: 상 우 하 좌; 백그라운드 칼라 패딩,보더까지 들어감 
+    padding: 상하 좌우; 2개만 패딩입력시
+    padding: 상우하좌; 1개만 패딩입력시 
+    padding: 상 좌우 하; 3개만 패딩입력시 
+    padding: 10px 20px 30px 40px; */
+
+    /* 바깥쪽 여백 margin 
+    margin: 상우하좌; 값을 하나만 적을 때 상우하좌 동시에 다 씀*/
+    /* margin: 50px; */
+   }
+
+   /* .box 중에서 두번째 padding을 상우하좌 28px 50px
+   선택자
+     두번째.box
+   속성
+    padding을 상우하좌 50px */
+
+.box:nth-of-type(2){
+  padding:28px 50px;
+  background-color: #f00;
+}
+
+.box:nth-of-type(3){
+  padding:10px 20px 30px;
+  background-color: #00f;
+}
+
+/* block 레벨 */
+*{padding: 0; margin: 0;}
+/* 
+요소의 수평크기
+lm+lb+lp+content(width)+rp+rb+rm
+
+요소의 수직크기
+tm+tp+tp+content(heigh)+bp+bb+bm
+*/
+h1{
+  background-color: #f68;
+}
+
+.box:nth-of-type(1){
+  margin: 50px;
+}
+
+.box:nth-of-type(2){
+  width: 300px;
+  margin:100px auto;
+  /*margin :상하 auto; 블록레벨을 가운데 위치*/
+}
+  </style>
+</head>
+<!-- 태그에 인라인으로 css적용 -->
+<body>
+  <h1 class="page-title">웹폰트 사용</h1>
+  <div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque fugit assumenda ullam laudantium laboriosam autem explicabo beatae voluptas amet quidem nobis, molestiae non! Aut alias officia illum sit quam minus.</div>
+  <!-- .box>lorem -->
+  <div class="box">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis tempora necessitatibus ipsam temporibus molestias, quod iusto minima quas cumque vero illum ratione quaerat quos numquam quam mollitia laborum odio autem.</div>
+
+  <!-- ul>li*4>a>{text$} -->
+  <ul>
+    <li><a href="">text1</a></li>
+    <li><a href="">text2</a></li>
+    <li><a href="">text3</a></li>
+    <li><a href="">text4</a></li>
+  </ul>
+
+  <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae at deserunt suscipit iste quis odio deleniti enim ipsa, soluta exercitationem id adipisci corrupti dolor. Velit vitae explicabo cumque praesentium illum?</div>
+</body>
+
+</html>
