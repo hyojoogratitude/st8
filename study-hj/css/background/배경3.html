@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배경3-다중 배경</title>
+</head>
+<body>
+<div class="wrap"></div>
+<!-- div.content>lorem*2 -->
+<div class="content">
+  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti voluptatem atque voluptatum ad quibusdam veritatis voluptates laboriosam rerum consequuntur eveniet, dolorem nihil perferendis tenetur perspiciatis ea dolore quisquam optio a.</div>
+  <div>Dolore ea eius similique sunt libero maiores eligendi repellat nam, modi cupiditate nisi earum expedita facere optio provident? Dolores ea adipisci aliquam itaque? Blanditiis minima odio, officia beatae illo aperiam!</div>
+</div>
+<style>
+  *{margin: 0; padding: 0;}
+  .wrap{
+    /* width: 100vw;  
+    밑에 글자 쓰니 수평 스크롤바 생김 
+    vw: 스크롤바 너비 안 뺌 / 스크롤바 포함해서 보이는 전체 */
+    width: 100%; /*스크롤바 없음 스크롤빠 너비 뺌*/
+    height: 100vh;
+    background-color: #f86;
+    background-image: 
+    url(images/sun.png),
+    url(images/flower.png),
+    url(images/field2.png);
+    background-repeat: 
+    no-repeat,
+    repeat-x,
+    repeat-x;
+    /* background-position: right top; */
+    background-position: 
+    100% 0,
+    0 100%,
+    center bottom;  /*50% 100% 와 동일*/
+  }
+</style>
+</body>
+</html>
