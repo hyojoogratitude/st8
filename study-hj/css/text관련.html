@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>text 관련</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .wrap{
+      margin:50px;
+      box-sizing: border-box;
+      border: 1px solid #000;
+    }
+    .wrap p{
+      text-indent: 1em;
+      text-transform: uppercase;
+      letter-spacing:6px;
+    }
+   .wrap p:last-child{
+      /* text-indent: -3em;
+      3글자 정도인데 m자보다 적은 글자 있어서 lorem 나옴
+      한글로 하면 유사하게 나옴 */
+      text-indent: -32px;
+      text-transform: capitalize;
+      letter-spacing: -3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo officia rerum similique earum veritatis adipisci! Illum sed atque, reprehenderit placeat temporibus dolorem dolorum qui cupiditate iure cumque facilis deleniti omnis!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus earum animi possimus nesciunt necessitatibus suscipit ad nihil soluta. Cumque nostrum possimus animi expedita praesentium rerum minus eligendi, maiores laborum magnam?</p>
+  </div>
+   <!-- .shadow -->
+  <div class="shadow sect1">
+    <p class="section-title">section title</p>
+  </div>
+  <div class="shadow sect2">
+    <p class="section-title">section title</p>
+  </div>
+  <style>
+  .section-title{
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    padding: 1em;
+    /* text-shadow: 10px 10px 10px rgba(255,0,0,0.5); */
+    /* text-shadow: -10px -10px 0px rgba(255,0,0,0.5); */
+    text-shadow: 10px -10px 5px rgba(255,0,0,0.5);
+  }
+
+
+  /* outglow */
+  .sect2 {
+    background-color: #333;
+  }
+
+  .sect2 .section-title{
+    color: #fff;
+    font-weight: 700;
+    /* text-shadow: 0px 0px 10px rgba(255,255,0,1); */
+    text-shadow: 0px 0px 20px rgba(255,255,255,1);
+  }
+  </style>
+</body>
+</html>

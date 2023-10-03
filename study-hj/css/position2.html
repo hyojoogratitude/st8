@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position2</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .wrap{
+      /* .box3의 기준조상이 되기 위해서 */
+      position: relative;
+      margin: 100px;
+      padding: 100px;
+      border: 10px dotted #000;
+      background-color: #ccc;
+      box-sizing: border-box;
+      /* 기준위치 보더(포함X) 안쪽부터임 */
+      height: 2000px;
+    }
+
+
+    .box:nth-child(even){
+      background-color: #f68;
+    }
+    .box:nth-child(odd){
+      background-color: #86f;
+    }
+    .box{
+      width:200px; height: 200px;
+    }
+    .box1{
+      position: static;
+      left: 100px; top:100px; 
+      /* 스태틱은 left/right/top/bottom에 영향을 받지 않음 */
+    }
+
+    .box2{
+      position:relative;
+      /* 위치 가능
+      기본위치: 원래 자신의 위치
+       ← -x  → +x    ↑ -y  ↓ +y  */
+      left:0px; top:0px;
+    }
+
+    .box3{
+      /* 일반흐름에서 제외 
+      공중에 확 떠버려서  wrap이 인식을 못함*/
+      position: absolute;
+    /* 기준위치
+    조상 중에 position값이 relative, fixed, absolute가 지정되어 있는 가까운 조상(기준조상 container box) */
+    
+      left: 0px; top:0px;
+      padding: 50px;
+      box-sizing: border-box;
+    }
+    
+    .box3 .inner{
+      padding: 16px;
+      background-color: #f00;
+    }
+    .box3 .inner p{
+      position: absolute;
+      /* 너비를 부모로부터 갖고 오는게 아니라
+      자신이 갖고 있는 너비만큼 갖고옴 */
+      /* 위치가능, 기준위치확인
+      요소 안으로 들어오면 + 요소밖은 - */
+      /* left:0px; top:0px; */
+      right: -50px; bottom:20px;
+      background-color: #00f;
+    }
+
+    .box4{
+      /* 일반흐름에서 제외 ->자기자리에서 붕떠서 올라옴*/
+      position: fixed;
+      /* 위치가능, 기준위치-뷰포트(브라우저) */
+      left: 0; top: 0;
+    }
+    `
+    .box5{
+      position: fixed;
+      right: 0; bottom: 0;
+    }
+
+    .box6{
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- .box.box$*6>.inner>p>{box$} -->
+    <div class="box box1">
+      <div class="inner">
+        <p>box1</p>
+      </div>
+    </div>
+    <div class="box box2">
+      <div class="inner">
+        <p>box2</p>
+      </div>
+    </div>
+    <div class="box box3">
+      <div class="inner">
+        <p>box3</p>
+      </div>
+    </div>
+    <div class="box box4">
+      <div class="inner">
+        <p>box4</p>
+      </div>
+    </div>
+    <div class="box box5">
+      <div class="inner">
+        <p>box5</p>
+      </div>
+    </div>
+    <div class="box box6">
+      <div class="inner">
+        <p>box6</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
