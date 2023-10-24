@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flexitem 가로 세로 가운데정렬-flex1번 스타일-1</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+
+    .wrap{
+
+    }
+    .parent{
+      background-color: rgba(0,0,255,0.5);
+      height: 400px;
+    }
+
+    .child{
+      background: #fff;
+      color: #000;
+      font-size: 2em;
+      padding: 1em;
+    }
+
+    .child p{
+      background-color: rgba(0,255,0,0.5);
+      border: 1px solid #0f0;
+      max-width: 500px;
+    }
+
+    .child p:last-child{
+      font-size: 0.4em;
+    }
+    /* flex 속성 */
+    .container{
+      display: flex;
+      /* flex-direction: row; */
+
+      /* 기본값
+      justify-content: flex-start;
+      align-items: stretch;
+  */
+    }
+
+  .item{
+    flex:none;
+
+    /* flex: none; 기본값
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto; */
+    
+
+    margin: auto; /*정렬속성을 무시하고 가운데위치*/
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:flex-start;
+  }
+
+  .item p{
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    /* height가 선언되어있으면 height만큼 
+    아니면 콘텐츠양만큼 */
+  }
+  </style>
+</head>
+<body>
+  <h1>수직 수평 가운데 정렬</h1>
+  <h2>
+    <p>margin:auto</p>
+    <p>아이템크기는 고정 flex:none</p>
+  </h2>
+
+  <div class="wrap">
+    <!-- .parent.container>.child.item>p*3 -->
+    <div class="parent container">
+      <div class="child item">
+        <p>Lorem, ipsum dolor.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsum, cupiditate, maiores tempore officiis ipsa sunt incidunt libero minima voluptates quas. Unde officia, optio numquam laborum magni sint ex incidunt!</p>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
