@@ -161,7 +161,8 @@ header{
   height: 80px;
   height: var(--header-height);
 
-  background-color: rgba(172, 38, 38, 0.3);
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 100;
   /* border: 1px solid #000; */
 }
 
@@ -171,13 +172,30 @@ background-color: var(--primary-color);
 }
 
 .header_wrap{
-  max-width: 1440px;
+  max-width: 1400px; /*미디어쿼리에 맞게 수정*/
   height: 100%;
   margin: 0 auto;
   /* display: flex; flex-container 선언 */
   justify-content: space-between;
   align-items: center;
 }
+
+
+@media (max-width:1400px){
+  .header_wrap{
+    padding-left: 80px ;
+    padding-right: 80px;
+  }
+} /*(max-width:1400px)*/
+
+
+@media (max-width:992px){
+  .header_wrap{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+} /*(max-width:992px)*/
+
 
 .header_wrap .header_logo a{
   display: block;
@@ -192,6 +210,13 @@ background-image: url(../image/header_logo_v2.png);
 .header_wrap nav{
   height: var(--header-height);
   /* display: block; */
+}
+
+/* .header_wrap nav 미디어쿼리 */
+@media (max-width:1200px){
+  .header_wrap nav{
+    display: none !important;
+  }
 }
 
 header.active .header_wrap nav{
@@ -284,14 +309,14 @@ nav .gnb_menu .gnb_menu_list .gnb_dropMenu_wrap{
 
 /* 1번메뉴를 위한 테스트 선택자 */
 /* .gnb_menu_list:nth-child(1) 1~7번으로 확인하면서 체크 */
-nav .gnb_menu .gnb_menu_list:nth-child(3) ul.gnb_dropMenu_wrap{
+nav .gnb_menu .gnb_menu_list:nth-child(1) ul.gnb_dropMenu_wrap{
 /* display: block;
 
 gnb_dropMenu_wrap>li 수평으로 오게 하기 */
-   /* display: flex; 
-  font-display: row;
+  /* display: flex;  */
+  /* font-display: row;
   justify-content: center;
-  align-items: stretch; */
+  align-items: stretch; */ 
 }
 
 
@@ -502,6 +527,225 @@ display: block;
 /* .conainer */
 .container{
   padding: 80px 0 160px;
-  background-color: #ccc; /*테스트용*/
+  /* background-color: #ccc; 테스트용 */
+}
+
+.main_slide{
+  height: 750px;
+}
+
+@media (max-width:768px){
+  .main_slide{
+    height:calc(100vh - var(--header-height));
+  }
+}
+
+/* swiper css 수정 */
+/* swiper 화살 navigation */
+.main_slide .swiper-button-next,
+.main_slide .swiper-button-prev{
+  width: 50px; height: 55px;
+
+  /* background-image: url(../image/sprite.png);
+  background-repeat: no-repeat; */
+
+  background:url(../image/sprite.png) no-repeat;
+  top:auto;
+  bottom: 220px;
+}
+
+@media (max-width:768px){
+.main_slide .swiper-button-next,
+.main_slide .swiper-button-prev{
+  display: none;
+}
+}
+
+.main_slide .swiper-button-prev{
+  background-position: -294px -96px;
+  left: calc(150px - 50px - 10px);  
+}
+.main_slide .swiper-button-next{
+  background-position: -345px -96px;
+  right: calc(150px - 50px - 10px);
+}
+
+.main_slide .swiper-button-next::after,
+.main_slide .swiper-button-prev::after{
+  content: '';
+
+}
+
+/* swiper slide */
+.main_slide .swiper-slide{}
+
+/* 미디어쿼리하면서 추가 */
+.main_slide .swiper-slide picture{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* 미디어쿼리하면서 선택자 수정 */
+.main_slide .swiper-slide picture>img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* 이미지가 가운데를 중심으로 표시 */
+  object-position: center;
+}
+
+/* swiper slider */
+.main_slide .swiper-scrollbar{
+ top: auto;
+ bottom: calc(220px + 27px);
+ height: 2px;
+ left:150px;
+ right: 150px;
+ /* margin: 0 150px; */
+ width: calc(100% - 320px);
+ background-color: rgba(255,255,255,0.3);
+ overflow: hidden;
+}
+
+.main_slide .swiper-scrollbar-drag{
+  background-color: #fff;
+  /* position: relative;
+  기본 swiper css에 지정되어 있어요 */
+}
+
+/* 추가 */
+.main_slide .swiper-scrollbar-drag::before{
+ content: '';
+ display: block;
+ position: absolute;
+ /* 시작위치를 왼쪽 브라우저크기만큼 보내버림 */
+ left:-100vw;
+ top: 0;
+ /* 브라우저 크기만큼 */
+ width: 100vw;
+ height: 100%;
+ background-color: #fff;
+}
+
+/* .swiper fraction css */
+.main_slide .swiper-pagination-fraction{
+  color: #fff;
+  font-size: 0;
+}
+
+.main_slide .swiper-pagination-fraction
+.swiper-pagination-current{
+  font-size: 12px;
+  padding-right: 0.5em;
+}
+
+.main_slide .swiper-pagination-fraction
+.swiper-pagination-current::after{
+  /*shift + W화폐  */
+ content: '|';
+ padding-left: 0.5em;
+}
+.main_slide .swiper-pagination-fraction
+.swiper-pagination-total{
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+
+/* swiper css 수정완료 */
+
+/* swiper  미디어쿼리 수정 */
+@media (max-width:768px){
+  .main_slide .swiper-scrollbar{
+    bottom: calc(150px + 20px);
+    left:calc(50px + 50px);
+    right:50px;
+    width: calc(100% - 50px - 50px - 50px) ;
+  }
+
+  .main_slide .swiper-pagination-fraction {
+    top:auto;
+    bottom: calc(150px + 24px);
+    left: 50px; 
+    width: auto;
+    text-shadow: 0 0 5px rgba(0,0,0,0.8);
+  }
+}
+/* @media (max-width:768px) */
+
+/* slide-info 슬라이드 글상자 */
+.main_slide .swiper-slide .slide-info{
+  position: absolute;
+  left: 0; top:0;
+  width: 100%; height: 100%;
+}
+
+.main_slide .slide-info .slide_info_box{
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+
+.main_slide .slide-info .slide_logo{
+  position: absolute;
+  right: 150px;
+  bottom: 50px;
+  /* background-color: rgba(0,255,0,0.5); */
+  background-repeat: no-repeat;
+}
+.main_slide .slide-info .slide_logo.teamnaver{
+  width: 188px; height: 40px;
+  background-image: url(../image/teamnaver_logo.gif);
+  background-size: 188px 40px;
+}
+.main_slide .slide-info .slide_logo.naver{
+  width: 156px; height: 40px;
+  background-image: url(../image/sprite.png);
+  background-position:-192px -1057px;
+}
+
+.main_slide .slide-info .slide_text_box{
+position: absolute;
+left: 0; bottom: 150px;
+padding: 0 150px;
+}
+
+
+  /* strong 선택자 추가 */
+  /* 인라인레벨은 수직에 관련된 여백을 먹지 않음
+  strong 인라인 */
+.main_slide .slide-info .slide_text_box .slide_title strong{
+  /* strong block 전환 */
+  display: block;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 2em;
+  text-shadow: 
+  1px 1px 2px rgba(255,0,0,0.8),
+  3px 3px 2px rgba(0,255,0,0.8),
+  5px 5px 2px rgba(0,0,255,0.8),
+  7px 7px 2px rgba(255,0,0,0.8);
+}
+
+.main_slide .slide-info .slide_text_box .slide_text{
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width:768px){
+  .main_slide .slide-info .slide_text_box{
+    padding: 0 50px 0px;
+  }
+
+  .main_slide .slide-info .slide_text_box .slide_title {
+    font-size: 2em;
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+  }
+  .main_slide .slide-info .slide_text_box .slide_text{
+    display: none;
+  }
 }
 
